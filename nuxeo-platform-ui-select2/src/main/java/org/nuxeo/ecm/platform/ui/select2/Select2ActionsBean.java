@@ -91,7 +91,6 @@ public class Select2ActionsBean implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @SuppressWarnings("unused")
     private static final Log log = LogFactory.getLog(Select2ActionsBean.class);
 
     protected static final String SELECT2_RESOURCES_MARKER = "SELECT2_RESOURCES_MARKER";
@@ -200,7 +199,7 @@ public class Select2ActionsBean implements Serializable {
                 jg.writeStringField(Select2Common.SELECTION_FORMATTER,
                         Select2Common.USER_DEFAULT_SELECTION_FORMATTER);
             }
-        } else if (widget.getType().startsWith(Select2Common.SUGGESTION_SELECT2)) {
+        } else if (Select2Common.SELECT2_DOC_WIDGET_TYPE_LIST.contains(widget.getType())) {
             if (!hasSuggestionFormatter) {
                 jg.writeStringField(Select2Common.SUGGESTION_FORMATTER,
                         Select2Common.DOC_DEFAULT_SUGGESTION_FORMATTER);
